@@ -1,8 +1,10 @@
 # Correlation route
-![Correlation route](/outputs/correlation.png)
+
+![Correlation route](https://github.com/dorkydhruv/2200290100061/blob/master/stock-price-aggregation/outputs/correlation.png?raw=true)
 
 # Aggregate route
-![Aggregate route](/outputs/aggregate.png)
+
+![Aggregate route](https://github.com/dorkydhruv/2200290100061/blob/master/stock-price-aggregation/outputs/aggregate.png?raw=true)
 
 ## For startup
 
