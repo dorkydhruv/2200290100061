@@ -1,0 +1,87 @@
+<html>
+    <head>
+    <title>
+        Temperature converter
+    </title>
+    </head>
+    <style>
+        .main-div{
+            width: max-content;
+            flex: auto;
+            margin: 2px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <body>
+        <div class="main-div" style="width: 100vh; height: 100vh;">
+            <h1> Temperature Converter</h1>
+            <h4>Temperature</h4>
+            <input  id="temp" type="number"/>
+            <h4>From Unit</h4>
+            <select name="from-temp" id="from">
+                <option class="temp-op" value="c">
+                    Celsius 
+                </option>
+                <option  class="temp-op" value="f">
+                    Fahrenheit 
+                </option>
+                <option class="temp-op" value="k">
+                    Kelvin 
+                </option>
+            </select>
+            <h4>
+                To unit
+            </h4>
+            <select name="To-temp" id="to">
+                <option class="temp-op" value="c">
+                    Celsius 
+                </option>
+                <option  class="temp-op" value="f">
+                    Fahrenheit 
+                </option>
+                <option class="temp-op" value="k">
+                    Kelvin 
+                </option>
+            </select>
+            <br/>
+            <br/>
+            <button onclick="doSomething()"> Calculate</button>
+            <div >
+            Result
+            <h2 id="answer"></h2>
+        </div>
+        </div>
+    </body>
+    <script>
+        const map={
+            "c-k": (c)=>{
+                return c+273.15;
+            },
+            "k-c":(k)=>{
+                return k-273.5;
+            },
+            "f-c":(f)=>{
+                return (5/9)*(f-32);
+            },
+            "c-f":(c)=>{
+                return c*(5/9) + 32;
+            },
+            "f-k":(f)=>{
+                return (f-32)*(5/9) + 273.15;
+            },
+            "k-f":(k)=>{
+                return (k-273.15)*(9/5) + 32;
+            }
+        }
+        function doSomething(){
+            const temp = document.getElementById("temp").value;
+            const from = document.getElementById("from").value
+            const to=document.getElementById("to").value;
+            const key = `${from}-${to}`;
+            const answer = map[key](Number(temp));
+            console.log(answer);
+            document.getElementById("answer").innerHTML=answer;
+        }
+    </script>
+</html>
